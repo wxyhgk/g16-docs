@@ -21,3 +21,8 @@ python3 -m http.server -d site 8000       # http://localhost:8000
 ## AI 问答
 点页面右下角「AI 问答」,在 ⚙ 里填接口类型、地址、模型和密钥(只保存在访问者自己的浏览器里)。
 注意:浏览器直连要求接口支持 CORS;Pages 是 https,所以接口也必须是 https(localhost 除外)。
+
+## 仓库
+- GitHub: https://github.com/wxyhgk/g16-docs (Pages: https://wxyhgk.github.io/g16-docs/)
+- 本地 GitLab: http://ds720.local:2224/wxyhgk/g16-docs
+- `git push` 会同时推送到两个远程(origin 配置了两个 push 地址)。
