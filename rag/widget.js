@@ -1,5 +1,5 @@
 /* Ask-the-manual widget: fully client-side (static hosting friendly).
- *  - retrieval: BM25 over rag/index-{en,zh}.json, computed in the browser
+ *  - retrieval: BM25 over rag/index-{en,zh}.js, computed in the browser
  *  - answer: the browser calls the LLM endpoint the visitor typed into the settings (⚙); nothing is stored server-side
  */
 (function () {
@@ -70,9 +70,13 @@
   var indexes = {};
   function loadIndex(lang) {
     if (!indexes[lang]) {
-      indexes[lang] = fetch(root + "rag/index-" + lang + ".json").then(function (r) {
-        if (!r.ok) throw new Error("index HTTP " + r.status);
-        return r.json();
+      indexes[lang] = new Promise(function (resolve, reject) {
+        if (window.ASK_IDX && window.ASK_IDX[lang]) return resolve(window.ASK_IDX[lang]);
+        var sc = document.createElement("script");   // a <script> works over http(s) and file://, unlike fetch()
+        sc.src = root + "rag/index-" + lang + ".js";
+        sc.onload = function () { window.ASK_IDX && window.ASK_IDX[lang] ? resolve(window.ASK_IDX[lang]) : reject(new Error("index empty")); };
+        sc.onerror = function () { delete indexes[lang]; reject(new Error("cannot load " + sc.src)); };
+        document.head.appendChild(sc);
       });
     }
     return indexes[lang];

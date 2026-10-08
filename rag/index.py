@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Chunk md/ (EN) and md_zh/ (ZH) by heading and write static BM25 indexes:
-rag/index-en.json and rag/index-zh.json (loaded lazily by the browser widget).
+rag/index-en.js and rag/index-zh.js (loaded lazily by the browser widget).
 
 The tokenizer and scoring here must match rag/widget.js exactly.
 """
@@ -88,8 +88,9 @@ def build():
                 continue
             chunks += chunks_of(f, lang, f.relative_to(root))
         data = build_lang(chunks)
-        out = ROOT / "rag" / f"index-{lang}.json"
-        out.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        out = ROOT / "rag" / f"index-{lang}.js"   # a script, not JSON: <script> loading also works from file://
+        payload = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+        out.write_text(f'(window.ASK_IDX=window.ASK_IDX||{{}}).{lang}={payload};', encoding="utf-8")
         print(f"{lang}: {len(chunks)} chunks, {len(data['post'])} terms -> {out.name} ({out.stat().st_size // 1024} KB)")
 
 

@@ -179,7 +179,7 @@ def stage(zh):
     if not zh:  # static search indexes, shared by both sites (the ZH site loads them from the site root)
         (st / "rag").mkdir()
         for lang in ("en", "zh"):
-            shutil.copy(f"rag/index-{lang}.json", st / "rag" / f"index-{lang}.json")
+            shutil.copy(f"rag/index-{lang}.js", st / "rag" / f"index-{lang}.js")
 
     cfg = {
         "site_name": lab["title"],
@@ -201,7 +201,7 @@ def stage(zh):
                  "toggle": {"icon": "material/weather-sunny", "name": "Light mode"}},
             ],
         },
-        "plugins": [{"search": {"lang": ["en", "zh"]}}] if zh else ["search"],
+        "plugins": [{"search": {"lang": ["en", "zh"]}} if zh else "search", "offline"],  # offline: search also works from file://
         "markdown_extensions": ["tables", "admonition", {"toc": {"permalink": True}}],
         "extra_javascript": ["js/lang-switch.js", "js/ask-widget.js"],
         "extra_css": ["css/lang-switch.css", "css/ask-widget.css"],

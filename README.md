@@ -10,7 +10,7 @@
 ```bash
 pip install mkdocs mkdocs-material pyyaml
 ./build.sh                                # 输出 site/(英文)和 site/zh/(中文)
-python3 -m http.server -d site 8000       # http://localhost:8000
+python3 -m http.server -d site 8000       # http://localhost:8000(也可直接双击 site/index.html 打开,搜索与问答检索同样可用)
 ```
 
 ## 发布到 GitHub Pages(与 GaussView6 / Multiwfn 同一套做法)

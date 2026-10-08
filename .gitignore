@@ -4,7 +4,7 @@ _docs_en/
 _docs_zh/
 mkdocs.yml
 mkdocs-zh.yml
-rag/index-*.json
+rag/index-*.js
 __pycache__/
 # source PDFs: large and not needed to build the site
 *.pdf
