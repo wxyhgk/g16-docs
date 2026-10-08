@@ -1,0 +1,27 @@
+# part1
+
+- **[1. Gaussian 16 Citation](01_Gaussian_16_Citation/00_intro.md)**
+  - [1.1 Additional Citation Recommendations](01_Gaussian_16_Citation/01.01_Additional_Citation_Recommendations.md)
+- **[2. Gaussian 16 Capabilities](02_Gaussian_16_Capabilities/00_intro.md)**
+  - [2.1 Model Chemistries](02_Gaussian_16_Capabilities/02.01_Model_Chemistries.md)
+  - [2.2 Job Types](02_Gaussian_16_Capabilities/02.02_Job_Types.md)
+  - [2.3 Program Limits](02_Gaussian_16_Capabilities/02.03_Program_Limits.md)
+  - [2.4 Links](02_Gaussian_16_Capabilities/02.04_Links.md)
+- **[3. About Gaussian 16 Input](03_About_Gaussian_16_Input/00_intro.md)**
+  - [3.1 Syntax](03_About_Gaussian_16_Input/03.01_Syntax.md)
+  - [3.2 Molecule Specifications](03_About_Gaussian_16_Input/03.02_Molecule_Specifications.md)
+  - [3.3 Basis Sets](03_About_Gaussian_16_Input/03.03_Basis_Sets.md)
+  - [3.4 Constructing Z-Matrices](03_About_Gaussian_16_Input/03.04_Constructing_Z_Matrices.md)
+  - [3.5 Multistep Jobs](03_About_Gaussian_16_Input/03.05_Multistep_Jobs.md)
+  - [3.6 Section Ordering](03_About_Gaussian_16_Input/03.06_Section_Ordering.md)
+- **[4. Running Gaussian 16](04_Running_Gaussian_16/00_intro.md)**
+  - [4.1 Preliminaries](04_Running_Gaussian_16/04.01_Preliminaries.md)
+  - [4.2 Running under UNIX](04_Running_Gaussian_16/04.02_Running_under_UNIX.md)
+  - [4.3 Scratch Files](04_Running_Gaussian_16/04.03_Scratch_Files.md)
+  - [4.4 Memory Use](04_Running_Gaussian_16/04.04_Memory_Use.md)
+  - [4.5 Parallel Jobs](04_Running_Gaussian_16/04.05_Parallel_Jobs.md)
+  - [4.6 Using GPUs](04_Running_Gaussian_16/04.06_Using_GPUs.md)
+  - [4.7 g16 Command Line Options](04_Running_Gaussian_16/04.07_g16_Command_Line_Options.md)
+  - [4.8 Setting Defaults](04_Running_Gaussian_16/04.08_Setting_Defaults.md)
+  - [4.9 The Default.Route File](04_Running_Gaussian_16/04.09_The_Default_Route_File.md)
+  - [4.10 Running Gaussian Test Jobs](04_Running_Gaussian_16/04.10_Running_Gaussian_Test_Jobs.md)
